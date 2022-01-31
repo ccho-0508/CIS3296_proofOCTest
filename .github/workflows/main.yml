@@ -4,7 +4,7 @@ name: Testing Automatin with Cronjob
 
 on:
   schedule:
-    - cron: "*/15 * * * *" # Runs every 3 hours (Check https://crontab.guru/)
+    - cron: "0 */3 * * *" # Runs every 3 hours (Check https://crontab.guru/)
 
 
 
