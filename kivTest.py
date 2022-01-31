@@ -1,3 +1,5 @@
+# https://stackoverflow.com/questions/41836988/git-push-via-gitpython/54111480
+
 from typing import Text
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
@@ -17,26 +19,38 @@ COMMIT_MESSAGE = "Test GUI"
 class GitInteract(App):
 
     def build(self):
-        # self.window = GridLayout()
+        self.window = GridLayout()
         # self.user = TextInput(multiline=False)
         # self.window.add_widget(self.user)
         #add widgets to windowwhichz
-        gitButton = Button(text="ADD COMMIT PUSH",
+        gitButtonPush = Button(text="Push to Repo",
                     font_size ="15sp",
                    background_color =(1, 1, 1, 1),
                    color =(1, 1, 1, 1),
-                   size =(32, 32),
-                   size_hint =(.2, .2),
+                   size =(300,150),
                    pos =(300, 250))
- 
-        gitButton.bind(on_press = self.git_push)
 
-        # gitButton
-        return gitButton
+        gitButtonPull = Button(text= "Push to Repo",
+                    font_size = "15sp",
+                   background_color = (1, 1, 1, 1),
+                   color = (1, 1, 1, 1),
+                   size = (300,150),
+                   pos = (600, 250))
+
+        textinput = TextInput(text='Hello world',
+                    size =(300,150),
+                    pos = (450, 50))
+ 
+        gitButtonPush.bind(on_press = self.git_push)
+        gitButtonPush.bind(on_press = self.git_pull)
+
+        self.window.add_widget(gitButtonPush)
+        self.window.add_widget(gitButtonPull)
+        self.window.add_widget(textinput)
+        return self.window
     
     @staticmethod
     def git_push(self):
-
         try:
             repo = Repo(PATH_GITREPO)
             repo.git.add(update=True)
@@ -46,12 +60,26 @@ class GitInteract(App):
             print("Succesfully pushed changes to remote repo")
         except:
             print('Some error occured while pushing the code')   
+    
 
-
+    @staticmethod
+    def git_pull(self):
+        try:
+            repo = Repo(PATH_GITREPO)
+            # repo.git.add(update=True)
+            # repo.index.commit(COMMIT_MESSAGE)
+            origin = repo.remote(name='origin')
+            origin.pull()
+            print("Succesfully pulled changes from remote repo")
+        except:
+            print('Some error occured while pulling the code')   
     
 
 
-GitInteract().run()
+
+    
+if __name__ == "__main__":
+    GitInteract().run()
 
 
 
