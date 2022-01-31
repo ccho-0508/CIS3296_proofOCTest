@@ -63,7 +63,7 @@ class GitInteract(App):
 
     @staticmethod
     def git_push(self):
-        fo.close()
+        
         try:
             repo = Repo(PATH_GITREPO)
             repo.git.add(all=True)
@@ -96,7 +96,7 @@ if __name__ == "__main__":
 
 
 
-
+fo.close()
 
 
 #     def on_text(instance, value):
