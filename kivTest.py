@@ -21,7 +21,14 @@ class GitInteract(App):
         # self.user = TextInput(multiline=False)
         # self.window.add_widget(self.user)
         #add widgets to windowwhichz
-        gitButton = Button(text="ADD COMMIT PUSH")
+        gitButton = Button(text="ADD COMMIT PUSH",
+                    font_size ="15sp",
+                   background_color =(1, 1, 1, 1),
+                   color =(1, 1, 1, 1),
+                   size =(32, 32),
+                   size_hint =(.2, .2),
+                   pos =(300, 250))
+ 
         gitButton.bind(on_press = self.git_push)
 
         # gitButton
