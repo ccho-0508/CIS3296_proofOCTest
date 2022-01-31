@@ -1,5 +1,6 @@
 # https://stackoverflow.com/questions/41836988/git-push-via-gitpython/54111480
 
+from cgitb import text
 from typing import Text
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
@@ -15,6 +16,9 @@ import os
 PATH_GITREPO = os.getcwd()
 PATH_GITREPO +='/.git'
 COMMIT_MESSAGE = "Test GUI"
+
+fo = open("test.txt", "w")
+
 
 class GitInteract(App):
 
@@ -37,20 +41,28 @@ class GitInteract(App):
                    size = (300,150),
                    pos = (800, 250))
 
-        textinput = TextInput(text='Hello world',
+        textinput = TextInput(text='',
                     size =(300,150),
                     pos = (625, 50))
- 
+
+        self.window.add_widget(textinput)
+        textinput.bind(text = self.updateFile)
+    
         gitButtonPush.bind(on_press = self.git_push)
         gitButtonPull.bind(on_press = self.git_pull)
 
         self.window.add_widget(gitButtonPush)
         self.window.add_widget(gitButtonPull)
-        self.window.add_widget(textinput)
+       
         return self.window
     
+    def updateFile(self, instance, text):
+        print(text)
+        fo.write(text)
+
     @staticmethod
     def git_push(self):
+        # fo.close()
         try:
             repo = Repo(PATH_GITREPO)
             repo.git.add(update=True)
@@ -60,6 +72,7 @@ class GitInteract(App):
             print("Succesfully pushed changes to remote repo")
         except:
             print('Some error occured while pushing the code')   
+        
     
 
     @staticmethod
@@ -75,9 +88,11 @@ class GitInteract(App):
 
 
 
+
     
 if __name__ == "__main__":
     GitInteract().run()
+
 
 
 
