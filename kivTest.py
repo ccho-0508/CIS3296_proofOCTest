@@ -65,7 +65,7 @@ class GitInteract(App):
         # fo.close()
         try:
             repo = Repo(PATH_GITREPO)
-            repo.git.add(update=True)
+            repo.git.add(all=True)
             repo.index.commit(COMMIT_MESSAGE)
             origin = repo.remote(name='origin')
             origin.push()
