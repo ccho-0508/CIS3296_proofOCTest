@@ -65,7 +65,6 @@ class GitInteract(App):
 
     def git_push(self):
         fo.close()
-
         try:
             repo = Repo(PATH_GITREPO)
             repo.git.add(all=True)
