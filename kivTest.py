@@ -64,14 +64,17 @@ class GitInteract(App):
     @staticmethod
 
     def git_push(self):
-        fo.close()
+        fo.flush()
+        os.fsync(fo.fileno())
         try:
             repo = Repo(PATH_GITREPO)
             repo.git.add(all=True)
             repo.index.commit(COMMIT_MESSAGE)
             origin = repo.remote(name='origin')
             origin.push()
-            print("Succesfully pushed changes to remote repo")
+            print("Succesfully pushed changes to remote repo")    
+            
+
         except:
             print('Some error occured while pushing the code')   
         
