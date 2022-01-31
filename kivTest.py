@@ -18,7 +18,7 @@ import os
 PATH_GITREPO = os.getcwd()
 PATH_GITREPO +='/.git'
 COMMIT_MESSAGE = "Test GUI"
-
+print(PATH_GITREPO)
 fo = open("test.txt", "w")
 
 
