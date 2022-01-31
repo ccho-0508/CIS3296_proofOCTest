@@ -1,5 +1,6 @@
 # https://stackoverflow.com/questions/41836988/git-push-via-gitpython/54111480
 # https://stackoverflow.com/questions/19756329/can-i-save-a-text-file-in-python-without-closing-it
+# https://towardsdatascience.com/automate-workflow-github-actions-cron-130a8bf68ca6
 
 from cgitb import text
 from typing import Text
@@ -108,3 +109,5 @@ if __name__ == "__main__":
 
 # textinput = TextInput()
 # textinput.bind(text=on_text)
+
+# GITHUB_TOKEN
