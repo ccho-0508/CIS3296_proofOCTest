@@ -1,4 +1,5 @@
 # https://stackoverflow.com/questions/41836988/git-push-via-gitpython/54111480
+# https://stackoverflow.com/questions/19756329/can-i-save-a-text-file-in-python-without-closing-it
 
 from cgitb import text
 from typing import Text
