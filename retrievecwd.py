@@ -1,7 +1,7 @@
 import os
 
 cwd = os.getcwd()
-cwd +='\n/.git'
+cwd +='/selenium/chromedriver'
 
 print(cwd)
 

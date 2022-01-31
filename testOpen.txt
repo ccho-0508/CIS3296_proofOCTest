@@ -1,3 +1,5 @@
 /Users/ccho/Developer/CIS3296_ProjectPro/.git/Users/ccho/Developer/CIS3296_ProjectPro/.git/Users/ccho/Developer/CIS3296_ProjectPro/.git
 /Users/ccho/Developer/CIS3296_ProjectPro
-/.git
+/.git/Users/ccho/Developer/CIS3296_ProjectPro
+/.git/Users/ccho/Developer/CIS3296_ProjectPro
+/selenium/chromedriver/Users/ccho/Developer/CIS3296_ProjectPro/selenium/chromedriver

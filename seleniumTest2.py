@@ -2,9 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
+import os
 
-
-def login(user, passW):
+def login(user, passW, cwd):
     ser = Service("/Users/ccho/Developer/CIS3296_ProjectPro/chromedriver")
     op = webdriver.ChromeOptions()
     driver = webdriver.Chrome(service=ser, options=op)
@@ -23,5 +23,11 @@ def login(user, passW):
 
 user = input("Enter TU user : ")
 passW = input("Enter your password : ")
+cwd = os.getcwd()
+cwd +='/chromedriver'
 
-login(user, passW)
+try:
+    login(user, passW, cwd)
+except:
+    print("Invalid Credentials.")
+
