@@ -40,6 +40,8 @@ jobs:
           
     steps:
         - uses: actions/checkout@v1
+        - name: Change branch name
+          run: git branch -M main
         - name: Run a one-line script
           run: python ./testSc.py
         - name: switching from HTTPS to SSH
