@@ -38,6 +38,16 @@ jobs:
         - name: 🚀 Run Automation
           run: python3 testSc.py 
           
+        - name: Stage changed files
+          run: git add Hello.txt
+          
+        - name: Commit changed files
+          run: git commit -m "Auto updating Hello.txt"
+          
+        - name: push code to master  
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
 #     steps:
 #         - uses: actions/checkout@v1
 #         - name: Run a one-line script
