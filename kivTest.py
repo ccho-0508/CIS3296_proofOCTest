@@ -28,21 +28,21 @@ class GitInteract(App):
                    background_color =(1, 1, 1, 1),
                    color =(1, 1, 1, 1),
                    size =(300,150),
-                   pos =(300, 250))
+                   pos =(450, 250))
 
-        gitButtonPull = Button(text= "Push to Repo",
+        gitButtonPull = Button(text= "Pull from Repo",
                     font_size = "15sp",
                    background_color = (1, 1, 1, 1),
                    color = (1, 1, 1, 1),
                    size = (300,150),
-                   pos = (600, 250))
+                   pos = (800, 250))
 
         textinput = TextInput(text='Hello world',
                     size =(300,150),
-                    pos = (450, 50))
+                    pos = (625, 50))
  
         gitButtonPush.bind(on_press = self.git_push)
-        gitButtonPush.bind(on_press = self.git_pull)
+        gitButtonPull.bind(on_press = self.git_pull)
 
         self.window.add_widget(gitButtonPush)
         self.window.add_widget(gitButtonPull)
@@ -66,8 +66,6 @@ class GitInteract(App):
     def git_pull(self):
         try:
             repo = Repo(PATH_GITREPO)
-            # repo.git.add(update=True)
-            # repo.index.commit(COMMIT_MESSAGE)
             origin = repo.remote(name='origin')
             origin.pull()
             print("Succesfully pulled changes from remote repo")
