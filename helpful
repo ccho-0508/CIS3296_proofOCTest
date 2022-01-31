@@ -1,0 +1,27 @@
+
+
+
+python3 -m pip install ...
+pip3 install ...
+
+https://stackoverflow.com/questions/64717302/deprecationwarning-executable-path-has-been-deprecated-selenium-python
+https://www.youtube.com/watch?v=dOl_8pOi_LY
+
+/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages"
+
+
+
+Issue :
+
+pip3 install [package] name successfully installs pacakages at above path
+but terminal when executing does not recognize packages
+
+WAHT DOES work is 'python -m pip3 install [package]'
+
+???
+
+
+Authentication :
+https://www.geeksforgeeks.org/authentication-using-python-requests/
+https://stackoverflow.com/questions/42087985/python-requests-selenium-passing-cookies-while-logging-in
+https://www.guru99.com/handling-cookies-selenium-webdriver.html
