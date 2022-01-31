@@ -19,42 +19,40 @@ jobs:
     # The type of runner that the job will run on
     runs-on: macos-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-#     steps:
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#         - name: 🍽️ Checkout the repo
-#           uses: actions/checkout@main
-#           with:
-#             fetch-depth: 1
-            
-#         - name: 🐍 Set up Python 3.8
-#           uses: actions/setup-python@v2
-#           with:
-#             python-version: '3.8'
-            
-#         - name: 📥 Download the Python script needed for automation
-#           run:  curl https://raw.githubusercontent.com/ccho-0508/CIS3296_proofOCTest/main/testSc.py -o testSc.py
-
-#         - name: 🚀 Run Automation
-#           run: python testSc.py 
-          
+#     Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-        - uses: actions/checkout@v1
-        - name: Change branch name
-          run: git branch -M main
-        - name: Run a one-line script
-          run: python ./testSc.py
-        - name: switching from HTTPS to SSH
-          run: git remote set-url origin ${{ secrets.SSH }}
-        - name: check for changes
-          run: git status
-        - name: stage changed files
-          run: git add .
-        - name: commit changed files
-          run: git commit -m "Auto updating Hello.txt"
-        - name: fetch from main
-          run: git fetch origin main
-        - name: push code to master
-          run: git push origin main
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - name: 🍽️ Checkout the repo
+          uses: actions/checkout@main
+          with:
+            fetch-depth: 1
+            
+        - name: 🐍 Set up Python 3.8
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.8'
+            
+        - name: 📥 Download the Python script needed for automation
+          run:  curl https://raw.githubusercontent.com/ccho-0508/CIS3296_proofOCTest/main/testSc.py -o testSc.py
+
+        - name: 🚀 Run Automation
+          run: python3 testSc.py 
+          
+#     steps:
+#         - uses: actions/checkout@v1
+#         - name: Run a one-line script
+#           run: python ./testSc.py
+#         - name: switching from HTTPS to SSH
+#           run: git remote set-url origin ${{ secrets.SSH }}
+#         - name: check for changes
+#           run: git status
+#         - name: stage changed files
+#           run: git add .
+#         - name: commit changed files
+#           run: git commit -m "Auto updating Hello.txt"
+#         - name: fetch from main
+#           run: git fetch origin main
+#         - name: push code to master
+#           run: git push origin main
 
 
