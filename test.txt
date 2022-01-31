@@ -1,8 +1,5 @@
-t
-te
-tex
-text
-text 
-text a
-text ad
-text add
+h
+he
+hel
+hell
+hello
