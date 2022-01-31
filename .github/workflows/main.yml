@@ -46,8 +46,7 @@ jobs:
           
         - name: push code to master  
           uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+ 
 #     steps:
 #         - uses: actions/checkout@v1
 #         - name: Run a one-line script
