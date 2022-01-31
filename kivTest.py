@@ -59,10 +59,11 @@ class GitInteract(App):
     def updateFile(self, instance, text):
         print(text)
         fo.write(text)
+        
 
     @staticmethod
     def git_push(self):
-        # fo.close()
+        fo.close()
         try:
             repo = Repo(PATH_GITREPO)
             repo.git.add(all=True)
