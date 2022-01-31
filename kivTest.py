@@ -58,7 +58,7 @@ class GitInteract(App):
     
     def updateFile(self, instance, text):
         print(text)
-        fo.write(text)
+        fo.write(text+"\n")
         
 
     @staticmethod
