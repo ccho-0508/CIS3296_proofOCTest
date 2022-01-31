@@ -5,10 +5,14 @@ from kivy.uix.label import Label
 from kivy.uix.image import Image
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
-
 from git import Repo
- 
 
+import os 
+
+
+PATH_GITREPO = os.getcwd()
+PATH_GITREPO +='/.git'
+COMMIT_MESSAGE = "Test GUI"
 
 class GitInteract(App):
 
@@ -18,15 +22,16 @@ class GitInteract(App):
         # self.window.add_widget(self.user)
         #add widgets to windowwhichz
         gitButton = Button(text="ADD COMMIT PUSH")
+        gitButton.bind(on_press = self.git_push)
 
         # gitButton
         return gitButton
     
-
-    def git_push():
+    @staticmethod
+    def git_push(self):
 
         try:
-            repo = Repo(PATH_OF_GIT_REPO)
+            repo = Repo(PATH_GITREPO)
             repo.git.add(update=True)
             repo.index.commit(COMMIT_MESSAGE)
             origin = repo.remote(name='origin')

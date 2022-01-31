@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 
 
+
 def login(user, passW):
     ser = Service("/Users/ccho/Developer/CIS3296_ProjectPro/chromedriver")
     op = webdriver.ChromeOptions()
